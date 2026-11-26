@@ -1,0 +1,83 @@
+/* ส่วนเสริมระดับแอป: ทุกค่าอ่านจาก token ใน tokens.css */
+
+html, body { margin: 0; min-height: 100%; }
+body { -webkit-font-smoothing: antialiased; }
+.app { max-width: 1360px; margin: 0 auto; min-height: 100vh; }
+main:focus { outline: none; }
+.ar-brand { color: inherit; text-decoration: none; border-radius: 12px; }
+
+/* ลิงก์ข้ามไปยังเนื้อหา */
+.skip-link { position: absolute; left: 12px; top: -60px; z-index: 50; background: var(--accent); color: var(--on-accent); padding: 10px 14px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: 12px; }
+
+/* overlay และ toast ยึดกับหน้าจอ ไม่ใช่กับหน้า */
+.ar-overlay { position: fixed; }
+.toast-slot .ar-toast { position: fixed; }
+
+/* โหมดปักหมุดบนแผนที่ */
+.ar-map.is-picking svg { cursor: crosshair; }
+.ar-map.is-picking { outline: 2px solid var(--sun); outline-offset: 2px; }
+.ar-map-hint { position: absolute; left: 12px; top: 12px; right: 56px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; font-size: 13px; box-shadow: var(--shadow-panel); }
+.ar-map-ctl button:disabled { opacity: .4; cursor: default; }
+
+/* เมนูเพิ่มเติมของทริป */
+.ar-menu-wrap { position: relative; }
+.ar-trip-menu { width: 220px; }
+.ar-acct-menu button.is-danger { color: var(--warn); }
+.ar-acct-menu button { width: 100%; }
+
+.trips-tools { align-items: center; }
+.trips-search { width: 260px; }
+
+/* แถบปุ่มล่างบนมือถือ (หน้าเลือกโปรไฟล์) */
+.mobile-cta { display: none; }
+
+@media (max-width: 900px) {
+  .app-tools { margin-left: auto; }
+  .ar-header .ar-steps { order: 3; width: 100%; justify-content: space-between; }
+  .ar-header .ar-step { flex: 1; justify-content: center; }
+  .page-profile { padding-bottom: 84px; }
+  .page-profile > .ar-panel .ar-cta { display: none; }
+  .mobile-cta {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; gap: 12px; align-items: center; justify-content: space-between;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: var(--panel); border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(8, 20, 19, .08);
+  }
+  .mobile-cta span { display: flex; flex-direction: column; min-width: 0; }
+  .mobile-cta small { color: var(--muted); font-size: 12px; }
+  .mobile-cta b { font-size: 15px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .summary-split { grid-template-columns: 1fr !important; }
+  .trips-tools, .trips-search { width: 100%; }
+}
+
+@media (max-width: 560px) {
+  .ar-header { gap: 10px; }
+  .ar-brand { width: 100%; }
+  .app-tools { margin-left: 0; width: 100%; flex-wrap: nowrap; gap: 6px; }
+  .app-tools > :last-child { margin-left: auto; }
+  .ar-lang > .ar-icon { display: none; }
+  .ar-brand b { font-size: 15px; }
+  .ar-brand svg { width: 30px; height: 30px; }
+  .ar-acct-btn .nm { display: none; }
+  .ar-header .ar-step span { font-size: 12.5px; }
+  .summary-actions { width: 100%; display: grid !important; grid-template-columns: 1fr 1fr; }
+  .summary-actions .ar-btn { justify-content: center; }
+  .ar-kpis { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- พิมพ์ / บันทึกเป็น PDF (FR-28) ---------- */
+.print-only { display: none; }
+@media print {
+  @page { size: A4; margin: 14mm; }
+  :root, [data-theme] { color-scheme: light; }
+  body, .ar-root, .ar-page { background: #fff !important; }
+  .ar-header, .no-print, .skip-link, .toast-slot, .ar-overlay, .mobile-cta, .ar-map-ctl { display: none !important; }
+  .print-only { display: flex; }
+  .print-head { justify-content: space-between; font-size: 12px; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+  .app { max-width: none; padding: 0; }
+  .summary-split { grid-template-columns: 1fr !important; }
+  .ar-panel, .ar-kpi, .ar-day { box-shadow: none !important; break-inside: avoid; }
+  .ar-day { break-inside: avoid; }
+  .print-map .ar-map { aspect-ratio: auto !important; height: 105mm; }
+  [data-print-map="0"] .print-map, [data-print-stops="0"] .print-stops, [data-print-cost="0"] .print-cost { display: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

@@ -1,0 +1,123 @@
+/* ระบบจัดการเส้นทางการท่องเที่ยว จังหวัดภูเก็ต — generated from tokens.json */
+:root, [data-theme="light"] {
+  --bg: #eef4f2;
+  --panel: #ffffff;
+  --panel-2: #f5f9f8;
+  --ink: #10211f;
+  --muted: #55686a;
+  --line: #dce6e3;
+  --line-strong: #7f9692;
+  --accent: #0b7a75;
+  --accent-soft: #e6f3f1;
+  --on-accent: #ffffff;
+  --sun: #e9962e;
+  --on-sun: #2a1700;
+  --ok: #2b7f47;
+  --warn: #b4441e;
+  --warn-soft: #fbece6;
+  --sea: #cbe4e6;
+  --sea-2: #b9dadd;
+  --land: #f6f0e1;
+  --land-edge: #cdbf9c;
+  --map-label: #5c6b67;
+  --c-travel: #0b7a75;
+  --c-entry: #c86a0e;
+  --c-guide: #b8406a;
+  --prof-cafe: #b0662b;
+  --prof-culture: #c8434f;
+  --prof-adventure: #d27311;
+  --prof-workation: #4f63d2;
+  --prof-festival: #c2389f;
+  --prof-nature: #2b8a4b;
+  --prof-wellness: #8250c8;
+  --prof-solo: #0f9a9a;
+  --prof-day-trip: #ae8505;
+  --prof-short-trip: #2f86c9;
+  --prof-long-trip: #6e8b1f;
+  --day-1: #0e7c86;
+  --day-2: #d3451b;
+  --day-3: #6a4cc2;
+  --day-4: #248736;
+  --day-5: #9e6c00;
+  --day-6: #c2185b;
+  --day-7: #3d5a80;
+  --day-8: #8d6e63;
+  --day-9: #008476;
+  --on-day: #ffffff;
+  --shadow-panel: 0 10px 30px -12px rgba(16,40,38,0.28);
+  --shadow-lift: 0 8px 20px -10px rgba(11,122,117,0.55);
+}
+[data-theme="dark"] {
+  --bg: #0a1516;
+  --panel: #102022;
+  --panel-2: #142829;
+  --ink: #e5f0ee;
+  --muted: #93a8a4;
+  --line: #21383a;
+  --line-strong: #5a7672;
+  --accent: #3cc4bb;
+  --accent-soft: #13332f;
+  --on-accent: #05211f;
+  --sun: #f2ae55;
+  --on-sun: #2a1700;
+  --ok: #5fcb85;
+  --warn: #f08a62;
+  --warn-soft: #2c1a14;
+  --sea: #0d272c;
+  --sea-2: #0b2125;
+  --land: #1b2d2b;
+  --land-edge: #35504c;
+  --map-label: #7f9894;
+  --c-travel: #3cc4bb;
+  --c-entry: #f09a3e;
+  --c-guide: #ec86a6;
+  --prof-cafe: #c0702f;
+  --prof-culture: #d05f69;
+  --prof-adventure: #e07b12;
+  --prof-workation: #6b7cd9;
+  --prof-festival: #ce55af;
+  --prof-nature: #2e9450;
+  --prof-wellness: #986fd2;
+  --prof-solo: #0f9a9a;
+  --prof-day-trip: #c99a06;
+  --prof-short-trip: #3089cd;
+  --prof-long-trip: #708d1f;
+  --day-1: #119aa6;
+  --day-2: #e6623c;
+  --day-3: #957fd3;
+  --day-4: #2ba141;
+  --day-5: #c98a00;
+  --day-6: #ea548f;
+  --day-7: #6c8eb9;
+  --day-8: #a3867b;
+  --day-9: #009d8d;
+  --on-day: #0a1516;
+  --shadow-panel: 0 10px 30px -12px rgba(0,0,0,0.6);
+  --shadow-lift: 0 8px 20px -10px rgba(0,0,0,0.7);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 22px;
+  --space-6: 32px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-pill: 999px;
+  --font-display: "Bai Jamjuree", "IBM Plex Sans Thai", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Thai", "Noto Sans Thai", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+.display-lg { font-family: var(--font-display); font-size: 32px; line-height: 38px; font-weight: 700; letter-spacing: -0.01em; }
+.title-lg { font-family: var(--font-display); font-size: 26px; line-height: 32px; font-weight: 700; letter-spacing: -0.01em; }
+.title { font-family: var(--font-display); font-size: 17px; line-height: 24px; font-weight: 600; }
+.eyebrow { font-family: var(--font-display); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; }
+.body { font-family: var(--font-body); font-size: 15px; line-height: 23px; font-weight: 400; }
+.body-strong { font-family: var(--font-body); font-size: 14px; line-height: 21px; font-weight: 600; }
+.body-sm { font-family: var(--font-body); font-size: 13.5px; line-height: 20px; font-weight: 400; }
+.caption { font-family: var(--font-body); font-size: 12px; line-height: 17px; font-weight: 400; }
+.num-lg { font-family: var(--font-mono); font-size: 22px; line-height: 28px; font-weight: 500; letter-spacing: -0.02em; }
+.num { font-family: var(--font-mono); font-size: 13px; line-height: 18px; font-weight: 500; }
